@@ -41,7 +41,7 @@ func TestReplaceGlobals(t *testing.T) {
 	initialL := *L()
 	initialS := *S()
 
-	withLogger(t, DebugLevel, nil, func(l *Logger, logs *observer.ObservedLogs) {
+	withLogger(t, TraceLevel, nil, func(l *Logger, logs *observer.ObservedLogs) {
 		L().Info("no-op")
 		S().Info("no-op")
 		assert.Equal(t, 0, logs.Len(), "Expected initial logs to go to default no-op global.")
@@ -151,7 +151,7 @@ func TestRedirectStdLog(t *testing.T) {
 	initialFlags := log.Flags()
 	initialPrefix := log.Prefix()
 
-	withLogger(t, DebugLevel, nil, func(l *Logger, logs *observer.ObservedLogs) {
+	withLogger(t, TraceLevel, nil, func(l *Logger, logs *observer.ObservedLogs) {
 		defer RedirectStdLog(l)()
 		log.Print("redirected")
 

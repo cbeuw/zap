@@ -85,7 +85,7 @@ func TestLoggerAtomicLevel(t *testing.T) {
 
 func TestLoggerInitialFields(t *testing.T) {
 	fieldOpts := opts(Fields(Int("foo", 42), String("bar", "baz")))
-	withLogger(t, DebugLevel, fieldOpts, func(logger *Logger, logs *observer.ObservedLogs) {
+	withLogger(t, TraceLevel, fieldOpts, func(logger *Logger, logs *observer.ObservedLogs) {
 		logger.Info("")
 		assert.Equal(
 			t,
@@ -98,7 +98,7 @@ func TestLoggerInitialFields(t *testing.T) {
 
 func TestLoggerWith(t *testing.T) {
 	fieldOpts := opts(Fields(Int("foo", 42)))
-	withLogger(t, DebugLevel, fieldOpts, func(logger *Logger, logs *observer.ObservedLogs) {
+	withLogger(t, TraceLevel, fieldOpts, func(logger *Logger, logs *observer.ObservedLogs) {
 		// Child loggers should have copy-on-write semantics, so two children
 		// shouldn't stomp on each other's fields or affect the parent's fields.
 		logger.With(String("one", "two")).Info("")

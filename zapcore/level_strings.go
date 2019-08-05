@@ -24,6 +24,7 @@ import "github.com/cbeuw/zap/internal/color"
 
 var (
 	_levelToColor = map[Level]color.Color{
+		TraceLevel:  color.White,
 		DebugLevel:  color.Magenta,
 		InfoLevel:   color.Blue,
 		WarnLevel:   color.Yellow,
