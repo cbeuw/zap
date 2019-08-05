@@ -30,8 +30,8 @@ import (
 	"strings"
 	"testing"
 
-	"go.uber.org/zap"
-	"go.uber.org/zap/zapcore"
+	"github.com/cbeuw/zap"
+	"github.com/cbeuw/zap/zapcore"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
@@ -42,8 +42,8 @@ import (
 // intended to match on the function name, while this is on the full output
 // which includes filenames.
 var _zapPackages = []string{
-	"go.uber.org/zap.",
-	"go.uber.org/zap/zapcore.",
+	"github.com/cbeuw/zap.",
+	"github.com/cbeuw/zap/zapcore.",
 }
 
 func TestStacktraceFiltersZapLog(t *testing.T) {
@@ -90,7 +90,7 @@ func TestStacktraceFiltersVendorZap(t *testing.T) {
 		curDir, err := os.Getwd()
 		require.NoError(t, err, "Failed to get current directory")
 
-		testDir := filepath.Join(goPath, "src/go.uber.org/zap_test/")
+		testDir := filepath.Join(goPath, "src/github.com/cbeuw/zap_test/")
 		vendorDir := filepath.Join(testDir, "vendor")
 		require.NoError(t, os.MkdirAll(testDir, 0777), "Failed to create source director")
 

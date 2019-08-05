@@ -30,8 +30,8 @@ import (
 	"strings"
 	"testing"
 
-	. "go.uber.org/zap"
-	"go.uber.org/zap/zapcore"
+	. "github.com/cbeuw/zap"
+	"github.com/cbeuw/zap/zapcore"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

@@ -27,8 +27,8 @@ import (
 	"testing"
 	"time"
 
-	"go.uber.org/zap/internal/ztest"
-	. "go.uber.org/zap/zapcore"
+	"github.com/cbeuw/zap/internal/ztest"
+	. "github.com/cbeuw/zap/zapcore"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

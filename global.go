@@ -27,7 +27,7 @@ import (
 	"os"
 	"sync"
 
-	"go.uber.org/zap/zapcore"
+	"github.com/cbeuw/zap/zapcore"
 )
 
 const (
